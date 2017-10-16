@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Stack should render 1`] = `
+<div>
+  Foo
+</div>
+`;
+
+exports[`Stack should render multiple Frames 1`] = `
+<div>
+  <span>
+    Slide 1
+  </span>
+  <span>
+    Slide 2
+  </span>
+</div>
+`;
+
+exports[`Stack should render nested Stacks 1`] = `
+<div>
+  <div>
+    <h1>
+      Heading
+    </h1>
+  </div>
+  <div>
+    Slide 2
+  </div>
+</div>
+`;
+
+exports[`Stack should render only Frames that match index 1`] = `
+<div>
+  <span>
+    Slide 1
+  </span>
+</div>
+`;
+
+exports[`backWardTree 1`] = `
+<div>
+  <h1>
+    Zero
+  </h1>
+</div>
+`;
+
+exports[`forwardTree 1`] = `
+<div>
+  <h1>
+    One
+  </h1>
+</div>
+`;
+
+exports[`initialTree 1`] = `
+<div>
+  <h1>
+    Zero
+  </h1>
+</div>
+`;
+
+exports[`jumpTree 1`] = `
+<div>
+  <h1>
+    Two
+  </h1>
+</div>
+`;

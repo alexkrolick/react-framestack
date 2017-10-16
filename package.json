@@ -1,0 +1,107 @@
+{
+  "name": "react-framestack",
+  "version": "0.1.0",
+  "description": "Conditionally render frames based on stack index",
+  "repository": "https://github.com/alexkrolick/react-framestack",
+  "main": "dist/bundle.js",
+  "module": "lib/index.js",
+  "files": [
+    "dist",
+    "lib"
+  ],
+  "scripts": {
+    "test": "jest src/",
+    "build": "yarn run build-lib && yarn run build-dist",
+    "build-lib": "BABEL_ENV=lib babel ./src --out-dir ./lib",
+    "build-dist": "NODE_ENV=production BABEL_ENV=dist webpack --config=webpack.config.js",
+    "watch": "webpack --config=webpack.config.js --watch",
+    "prepare": "yarn run build"
+  },
+  "keywords": [
+    "react",
+    "slides",
+    "stack",
+    "presentation",
+    "gallery"
+  ],
+  "author": "Alex Krolick",
+  "license": "MIT",
+  "dependencies": {
+    "react-broadcast": "^0.5.2"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.0.1",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "camel-case": "^3.0.0",
+    "eslint": "^4.9.0",
+    "eslint-plugin-jest": "^21.2.0",
+    "eslint-plugin-react": "^7.4.0",
+    "jest": "^21.2.1",
+    "prettier": "^1.6.1",
+    "react": "^16.0.0",
+    "react-test-renderer": "^16.0.0",
+    "webpack": "^3.7.1"
+  },
+  "peerDependencies": {
+    "prop-types": "^15.6.0",
+    "react": "^15.3.1 || ^16.0.0",
+    "react-dom": "^15.3.1 || ^16.0.0"
+  },
+  "eslintConfig": {
+    "extends": [
+      "eslint:recommended",
+      "plugin:react/recommended"
+    ],
+    "plugins": [
+      "react",
+      "jest"
+    ],
+    "parser": "babel-eslint",
+    "env": {
+      "browser": true,
+      "es6": true,
+      "commonjs": true,
+      "node": true,
+      "jest": true
+    }
+  },
+  "prettier": {
+    "semi": false,
+    "trailingComma": "es5"
+  },
+  "babel": {
+    "env": {
+      "test": {
+        "presets": [
+          "env",
+          "react",
+          "stage-2"
+        ]
+      },
+      "dist": {
+        "presets": [
+          "env",
+          "react",
+          "stage-2"
+        ]
+      },
+      "lib": {
+        "presets": [
+          [
+            "env",
+            {
+              "modules": false
+            }
+          ],
+          "react",
+          "stage-2"
+        ]
+      }
+    }
+  }
+}
